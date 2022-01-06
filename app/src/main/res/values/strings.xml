@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">tote-fifa-2022</string>
+    <string name="tote">Тотализатор</string>
+    <string name="gamblers">Участники</string>
+    <string name="games">Игры</string>
+    <string name="prognosis">Прогноз</string>
+    <string name="totalizator">Тотализатор</string>
+    <string name="winners">Победители</string>
 </resources>

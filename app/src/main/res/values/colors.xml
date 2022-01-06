@@ -10,4 +10,5 @@
 
     <color name="application">#26a69a</color>
     <color name="background">#b2dfdb</color>
+    <color name="slider">#e0f2f1</color>
 </resources>
