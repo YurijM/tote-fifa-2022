@@ -42,5 +42,13 @@
         android:id="@+id/gamblersFragment"
         android:name="com.example.tote_fifa_2022.screens.gamblers.GamblersFragment"
         android:label="fragment_gamblers"
-        tools:layout="@layout/fragment_gamblers" />
+        tools:layout="@layout/fragment_gamblers" >
+        <action
+            android:id="@+id/action_gamblersFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_graph" />
+    </fragment>
 </navigation>

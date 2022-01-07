@@ -34,8 +34,8 @@
     // define a custom header style
     <style name="Widget.MaterialDrawerHeaderStyleCustom" parent="">
         <item name="materialDrawerCompactStyle">true</item>
-        <item name="materialDrawerHeaderSelectionText">?colorOnSurface</item>
-        <item name="materialDrawerHeaderSelectionSubtext">?colorOnSurface</item>
+        <item name="materialDrawerHeaderSelectionText">@color/white</item>
+        <item name="materialDrawerHeaderSelectionSubtext">@color/white</item>
     </style>
 
     // define the custom styles for the theme

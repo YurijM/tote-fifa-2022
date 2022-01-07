@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="elevation">4dp</dimen>
-    <dimen name="margin_small">4dp</dimen>
-    <dimen name="margin">8dp</dimen>
     <dimen name="width_slider">100dp</dimen>
+    <dimen name="elevation">4dp</dimen>
+    <dimen name="margin_sm">4dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="margin_lg">12dp</dimen>
+    <dimen name="margin_xl">20dp</dimen>
+    <dimen name="padding_sm">4dp</dimen>
+    <dimen name="padding">8dp</dimen>
+    <dimen name="padding_lg">12dp</dimen>
+    <dimen name="padding_xl">20dp</dimen>
+    <dimen name="text_size_sm">14sp</dimen>
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="text_size_lg">18sp</dimen>
+    <dimen name="text_size_xl">24sp</dimen>
 </resources>

@@ -1,9 +1,21 @@
 <resources>
     <string name="app_name">tote-fifa-2022</string>
-    <string name="tote">Тотализатор</string>
+    <string name="tote">Тотализатор - 2022</string>
+    <string name="gamblers_bold"><b>Участники</b></string>
     <string name="gamblers">Участники</string>
     <string name="games">Игры</string>
     <string name="prognosis">Прогноз</string>
     <string name="totalizator">Тотализатор</string>
     <string name="winners">Победители</string>
+    <string name="enter">Войти</string>
+    <string name="remark_about_registration"><u>Нажмите здесь, чтобы зарегистрироваться</u></string>
+    <string name="enter_email">Введите email</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="confirm_password">Подтвердите пароль</string>
+    <string name="enter_family">Введите фамилию</string>
+    <string name="enter_name">Введите имя</string>
+    <string name="enter_nickname">Введите Ник</string>
+    <string name="login_bold"><b>Авторизация</b></string>
+    <string name="registration_bold"><b>Регистрация</b></string>
+    <string name="register">Зарегистрироваться</string>
 </resources>

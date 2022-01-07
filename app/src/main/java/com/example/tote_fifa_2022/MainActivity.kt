@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import com.example.tote_fifa_2022.databinding.ActivityMainBinding
 import com.example.tote_fifa_2022.ui.objects.AppSlider
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
+import com.example.tote_fifa_2022.utilits.START_YEAR
 import com.mikepenz.iconics.IconicsColor
 import com.mikepenz.iconics.IconicsDrawable
 import com.mikepenz.iconics.IconicsSize
@@ -15,6 +16,7 @@ import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
 import com.mikepenz.iconics.utils.color
 import com.mikepenz.iconics.utils.size
 import com.mikepenz.materialdrawer.widget.MaterialDrawerSliderView
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityMainBinding
@@ -29,6 +31,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(mBinding.root)
 
         APP_ACTIVITY = this
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        var copyright = mBinding.copyrightYear
+
+        if (year != START_YEAR) {
+            copyright.text = START_YEAR.toString() + "-" + year.toString()
+        } else {
+            copyright.text = START_YEAR.toString()
+        }
+
     }
 
     override fun onStart() {

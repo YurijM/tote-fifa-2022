@@ -16,7 +16,6 @@ import com.mikepenz.materialdrawer.model.interfaces.nameText
 import com.mikepenz.materialdrawer.widget.AccountHeaderView
 
 class AppSlider() {
-    //private lateinit var mCurrentProfile: ProfileDrawerItem
     private lateinit var mHeader: AccountHeaderView
 
     fun create() {
@@ -60,15 +59,12 @@ class AppSlider() {
 
         APP_ACTIVITY.mSlider.onDrawerItemClickListener = { _, drawerItem, _ ->
             val identifier = drawerItem.identifier.toInt()
-            //var addStack = true
-
-            //if (identifier == 100) addStack = false
 
             val fragment = when (identifier) {
                 100 -> R.id.gamblersFragment
-                101 -> R.id.registrationFragment
+                /*101 -> R.id.registrationFragment
                 102 -> R.id.loginFragment
-                /*103 -> GamesFragment()
+                103 -> GamesFragment()
                 104 -> PrognosisFragment()
                 105 -> TotalizatorFragment()
                 106 -> WinnersFragment()*/
@@ -77,48 +73,29 @@ class AppSlider() {
 
             APP_ACTIVITY.mNavController.navigate(fragment)
 
-            //replaceFragment(fragment, addStack)
-
             false
         }
     }
 
     private fun setProfile(): ProfileDrawerItem {
         return ProfileDrawerItem().apply {
-            descriptionTextColor = ColorStateList.valueOf(Color.WHITE)
-            textColor = ColorStateList.valueOf(Color.WHITE)
+            //descriptionTextColor = ColorStateList.valueOf(Color.WHITE)
+            //textColor = ColorStateList.valueOf(Color.WHITE)
             nameText = "MU"
             descriptionText = "Мягков Юрий"
             iconicsIcon = FontAwesome.Icon.faw_user
+            //iconColor = ColorStateList.valueOf(Color.WHITE)
             //iconUrl = "empty"
             identifier = 100
         }
     }
 
     private fun createHeader() {
-        /*mCurrentProfile = ProfileDrawerItem().apply {
-            nameText = USER.username;
-            descriptionText = "${USER.family} ${USER.name}"
-            iconUrl = USER.photoUrl
-            identifier = 102
-        }*/
-
-        //mCurrentProfile = setProfile()
-
         // Create the AccountHeader
         mHeader = AccountHeaderView(APP_ACTIVITY).apply {
             attachToSliderView(APP_ACTIVITY.mSlider) // attach to the slider
 
             addProfiles(setProfile())
-                /*ProfileDrawerItem()
-                    .apply {
-                    nameText = USER.username;
-                    descriptionText = "${USER.family} ${USER.name}";
-                    //iconicsIcon = FontAwesome.Icon.faw_user;
-                    iconUrl = USER.photoUrl
-                    //iconRes = R.drawable.mu
-                    identifier = 102
-                }*/
 
             setBackgroundColor(ContextCompat.getColor(context, R.color.application))
 

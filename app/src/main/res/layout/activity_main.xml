@@ -37,14 +37,55 @@
             app:layout_constraintTop_toBottomOf="@+id/toolbar"
             app:navGraph="@navigation/navigation_graph" />
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/footer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/application"
+            android:padding="@dimen/padding_sm"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/author"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <ImageView
+                android:id="@+id/copyright"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginEnd="@dimen/margin_sm"
+                android:src="@drawable/ic_copyright"
+                app:layout_constraintEnd_toStartOf="@id/copyrightYear"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+            <TextView
+                android:id="@+id/copyrightYear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="2021"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.mikepenz.materialdrawer.widget.MaterialDrawerSliderView
         android:id="@+id/slider"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/slider"
         android:layout_gravity="start"
+        android:backgroundTint="@color/slider"
         android:fitsSystemWindows="true"
         android:minWidth="@dimen/width_slider" />
 
