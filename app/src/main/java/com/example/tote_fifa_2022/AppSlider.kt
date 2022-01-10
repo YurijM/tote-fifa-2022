@@ -2,17 +2,23 @@ package com.example.tote_fifa_2022.ui.objects
 
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.view.View
+import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
 import com.example.tote_fifa_2022.R
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome.Icon.*
 import com.mikepenz.materialdrawer.iconics.iconicsIcon
+import com.mikepenz.materialdrawer.model.DividerDrawerItem
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem
 import com.mikepenz.materialdrawer.model.ProfileDrawerItem
+import com.mikepenz.materialdrawer.model.SecondaryDrawerItem
 import com.mikepenz.materialdrawer.model.interfaces.descriptionText
 import com.mikepenz.materialdrawer.model.interfaces.nameRes
 import com.mikepenz.materialdrawer.model.interfaces.nameText
+import com.mikepenz.materialdrawer.util.addStickyFooterItem
 import com.mikepenz.materialdrawer.widget.AccountHeaderView
 
 class AppSlider() {
@@ -27,6 +33,8 @@ class AppSlider() {
     private fun createSlider() {
         //APP_ACTIVITY.mSlider.customWidth = 400
         APP_ACTIVITY.mSlider.itemAdapter.clear()
+
+        val test = false
 
         APP_ACTIVITY.mSlider.itemAdapter.add(
             PrimaryDrawerItem().apply {
@@ -56,6 +64,19 @@ class AppSlider() {
                 identifier = 104
             }
         )
+
+        if (!test) {
+            APP_ACTIVITY.mSlider.itemAdapter.add(
+                DividerDrawerItem(),
+                SecondaryDrawerItem().apply {
+                    nameText = "админка"
+                    isSelectable = false
+                    isSelectedBackgroundAnimated = false
+                }
+            )
+        }
+
+        //APP_ACTIVITY.mSlider.addStickyFooterItem(PrimaryDrawerItem().apply { nameText = "StickyFooter" })
 
         APP_ACTIVITY.mSlider.onDrawerItemClickListener = { _, drawerItem, _ ->
             val identifier = drawerItem.identifier.toInt()
