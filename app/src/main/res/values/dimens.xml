@@ -14,4 +14,26 @@
     <dimen name="text_size">16sp</dimen>
     <dimen name="text_size_lg">18sp</dimen>
     <dimen name="text_size_xl">24sp</dimen>
+
+    <!--<dimen name="material_drawer_vertical_padding">4dp</dimen>-->
+    <!--<dimen name="material_drawer_item_primary">30dp</dimen>-->
+    <!--<dimen name="material_drawer_padding">0dp</dimen>-->
+    <!--<dimen name="material_drawer_item_primary">36dp</dimen>
+    <dimen name="material_drawer_item_primary_icon">72dp</dimen>-->
+
+    <dimen name="material_drawer_item_primary">40dp</dimen>
+    <!--<dimen name="material_drawer_item_primary_description">14sp</dimen>-->
+    <dimen name="material_drawer_item_primary_icon">40dp</dimen>
+    <dimen name="material_drawer_item_primary_icon_padding">8dp</dimen>
+    <dimen name="material_drawer_item_primary_icon_padding_right">12dp</dimen>
+    <!--<dimen name="material_drawer_item_primary_text">14sp</dimen>-->
+
+    <dimen name="material_drawer_item_secondary">20dp</dimen>
+    <!--<dimen name="material_drawer_item_secondary_description">12sp</dimen>
+    <dimen name="material_drawer_item_secondary_extra_text">12sp</dimen>
+    <dimen name="material_drawer_item_secondary_icon">56dp</dimen>
+    <dimen name="material_drawer_item_secondary_icon_padding">12dp</dimen>
+    <dimen name="material_drawer_item_secondary_icon_padding_right">36dp</dimen>-->
+    <dimen name="material_drawer_item_secondary_text">16sp</dimen>
+
 </resources>

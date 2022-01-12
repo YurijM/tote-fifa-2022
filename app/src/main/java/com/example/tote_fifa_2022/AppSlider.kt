@@ -6,6 +6,7 @@ import android.view.View
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import com.example.tote_fifa_2022.R
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
@@ -41,6 +42,7 @@ class AppSlider() {
                 //iconColor = ColorStateList.valueOf(ContextCompat.getColor(APP_ACTIVITY, R.color.application))
                 nameRes = R.string.gamblers;
                 iconicsIcon = faw_users;
+
                 identifier = 100
             },
             PrimaryDrawerItem().apply {
@@ -69,9 +71,30 @@ class AppSlider() {
             APP_ACTIVITY.mSlider.itemAdapter.add(
                 DividerDrawerItem(),
                 SecondaryDrawerItem().apply {
-                    nameText = "админка"
-                    isSelectable = false
-                    isSelectedBackgroundAnimated = false
+                    nameText = "Админка"
+                    textColor = ColorStateList.valueOf(ContextCompat.getColor(APP_ACTIVITY, R.color.black))
+                    isEnabled = false
+                },
+                DividerDrawerItem(),
+                PrimaryDrawerItem().apply {
+                    nameRes = R.string.games;
+                    iconicsIcon = FontAwesome.Icon.faw_futbol;
+                    identifier = 201
+                },
+                PrimaryDrawerItem().apply {
+                    nameRes = R.string.prognosis;
+                    iconicsIcon = faw_money_check;
+                    identifier = 202
+                },
+                PrimaryDrawerItem().apply {
+                    nameRes = R.string.totalizator;
+                    iconicsIcon = faw_ruble_sign;
+                    identifier = 203
+                },
+                PrimaryDrawerItem().apply {
+                    nameRes = R.string.winners;
+                    iconicsIcon = faw_trophy;
+                    identifier = 204
                 }
             )
         }
