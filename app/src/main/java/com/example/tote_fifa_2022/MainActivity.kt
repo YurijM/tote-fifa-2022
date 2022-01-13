@@ -39,7 +39,8 @@ class MainActivity : AppCompatActivity() {
         var copyright = mBinding.copyrightYear
 
         if (year != START_YEAR) {
-            copyright.text = START_YEAR.toString() + "-" + year.toString()
+            val strYear = "$START_YEAR-$year"
+            copyright.text = strYear
         } else {
             copyright.text = START_YEAR.toString()
         }
@@ -48,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         val database = Firebase.database
         val myRef = database.getReference("message")
 
-        myRef.setValue("Hello, World!")
+        myRef.push().setValue("Hello, World!")
     }
 
     override fun onStart() {
