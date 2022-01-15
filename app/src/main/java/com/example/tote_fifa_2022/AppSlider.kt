@@ -77,6 +77,11 @@ class AppSlider() {
                 },
                 DividerDrawerItem(),
                 PrimaryDrawerItem().apply {
+                    nameRes = R.string.emails;
+                    iconicsIcon = FontAwesome.Icon.faw_at;
+                    identifier = 200
+                },
+                PrimaryDrawerItem().apply {
                     nameRes = R.string.games;
                     iconicsIcon = FontAwesome.Icon.faw_futbol;
                     identifier = 201
@@ -112,6 +117,7 @@ class AppSlider() {
                 104 -> PrognosisFragment()
                 105 -> TotalizatorFragment()
                 106 -> WinnersFragment()*/
+                200 -> R.id.emailsFragment
                 else -> R.id.gamblersFragment
             }
 

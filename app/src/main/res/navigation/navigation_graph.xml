@@ -42,10 +42,28 @@
         android:id="@+id/gamblersFragment"
         android:name="com.example.tote_fifa_2022.screens.gamblers.GamblersFragment"
         android:label="fragment_gamblers"
-        tools:layout="@layout/fragment_gamblers" >
+        tools:layout="@layout/fragment_gamblers" />
+    <fragment
+        android:id="@+id/emailsFragment"
+        android:name="com.example.tote_fifa_2022.screens.emails.list.EmailsFragment"
+        android:label="fragment_emails"
+        tools:layout="@layout/fragment_emails" >
         <action
-            android:id="@+id/action_gamblersFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
+            android:id="@+id/action_emailsFragment_to_emailEditFragment"
+            app:destination="@id/emailEditFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailEditFragment"
+        android:name="com.example.tote_fifa_2022.screens.emails.edit.EmailEditFragment"
+        android:label="fragment_email_edit"
+        tools:layout="@layout/fragment_email_edit" >
+        <action
+            android:id="@+id/action_emailEditFragment_to_emailsFragment"
+            app:destination="@id/emailsFragment"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:launchSingleTop="true"

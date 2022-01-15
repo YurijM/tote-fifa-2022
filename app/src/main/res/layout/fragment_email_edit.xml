@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin_xl"
+    tools:context=".screens.emails.edit.EmailEditFragment">
+
+    <TextView
+        android:id="@+id/txtEditEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/title"
+        android:textColor="@color/application"
+        android:textSize="@dimen/text_size_lg"
+        android:layout_marginBottom="@dimen/margin_xl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/editAdmEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:autofillHints=""
+        android:layout_marginTop="@dimen/margin_xl"
+        app:layout_constraintTop_toBottomOf="@id/txtEditEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:hint="@string/enter_email" />
+
+    <Button
+        android:id="@+id/btnSaveEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/save"
+        app:layout_constraintEnd_toStartOf="@id/btnCancelEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="@dimen/margin_xl"
+        app:layout_constraintTop_toBottomOf="@+id/editAdmEmail" />
+
+    <Button
+        android:id="@+id/btnCancelEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/grey"
+        android:text="@string/cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnSaveEmail"
+        android:layout_marginTop="@dimen/margin_xl"
+        app:layout_constraintTop_toBottomOf="@+id/editAdmEmail" />
+</androidx.constraintlayout.widget.ConstraintLayout>

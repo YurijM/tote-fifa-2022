@@ -14,6 +14,8 @@
     <dimen name="text_size">16sp</dimen>
     <dimen name="text_size_lg">18sp</dimen>
     <dimen name="text_size_xl">24sp</dimen>
+    <dimen name="elevation_card">10dp</dimen>
+    <dimen name="corner_radius_card">10dp</dimen>
 
     <!--<dimen name="material_drawer_vertical_padding">4dp</dimen>-->
     <!--<dimen name="material_drawer_item_primary">30dp</dimen>-->
