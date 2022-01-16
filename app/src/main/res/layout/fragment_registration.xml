@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.registration.RegistrationFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".screens.emails.edit.EmailEditFragment">
 
     <TextView
         android:id="@+id/txtRegistration"
@@ -21,10 +21,7 @@
 
     <EditText
         android:id="@+id/inputRegFamily"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/enter_family"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,9 +30,7 @@
 
     <EditText
         android:id="@+id/inputRegName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/enter_name"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -44,9 +39,7 @@
 
     <EditText
         android:id="@+id/inputRegNik"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/enter_nickname"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,9 +48,7 @@
 
     <EditText
         android:id="@+id/inputRegEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,9 +57,7 @@
 
     <EditText
         android:id="@+id/inputRegPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/enter_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -77,9 +66,7 @@
 
     <EditText
         android:id="@+id/inputRegPasswordConfirm"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/confirm_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"

@@ -9,7 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#777777</color>
 
-    <color name="application">#26a69a</color>
+    <color name="application">#00838F</color>
     <color name="background">#b2dfdb</color>
     <color name="slider">#e0f2f1</color>
 </resources>

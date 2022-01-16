@@ -13,7 +13,7 @@
         android:layout_marginTop="@dimen/margin_xl"
         android:gravity="center"
         android:text="@string/login_bold"
-        android:textColor="@color/application"
+        android:textColor="#00838F"
         android:textSize="@dimen/text_size_xl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,26 +21,22 @@
 
     <EditText
         android:id="@+id/inputEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/txtLogin" />
 
     <EditText
         android:id="@+id/inputPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:autofillHints=""
+        style="@style/input"
         android:hint="@string/enter_password"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -73,5 +69,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtToRegistration" />
+
+    <!-- <EditText
+         android:id="@+id/inputEmail"
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_marginTop="@dimen/margin"
+         android:autofillHints=""
+         android:hint="@string/enter_email"
+         android:inputType="textEmailAddress"
+         app:layout_constraintEnd_toEndOf="parent"
+         app:layout_constraintStart_toStartOf="parent"
+         app:layout_constraintTop_toBottomOf="@id/txtLogin" />-->
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
