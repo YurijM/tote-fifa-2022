@@ -7,11 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.tote_fifa_2022.R
 import com.example.tote_fifa_2022.databinding.FragmentLoginBinding
+import com.example.tote_fifa_2022.firebase.FirebaseRepository
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
+import com.example.tote_fifa_2022.utilits.EMAIL
+import com.example.tote_fifa_2022.utilits.PASSWORD
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val mBinding get() = _binding!!
+    private val mFirebaseRepository = FirebaseRepository()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,7 +34,19 @@ class LoginFragment : Fragment() {
         }
 
         mBinding.btnLogin.setOnClickListener {
-            APP_ACTIVITY.mNavController.navigate(R.id.action_loginFragment_to_gamblersFragment)
+            var email = mBinding.inputEmail.text.toString()
+            var password = mBinding.inputPassword.text.toString()
+
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                EMAIL = email
+                PASSWORD = password
+
+                mFirebaseRepository.connectToDatabase()
+            } else {
+                if (email.isEmpty()) mBinding.inputEmail.error = getString(R.string.enter_email)
+                if (password.isEmpty()) mBinding.inputPassword.error = getString(R.string.enter_password)
+            }
+            //APP_ACTIVITY.mNavController.navigate(R.id.action_loginFragment_to_gamblersFragment)
         }
     }
 

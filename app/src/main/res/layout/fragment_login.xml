@@ -70,17 +70,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtToRegistration" />
 
-    <!-- <EditText
-         android:id="@+id/inputEmail"
-         android:layout_width="0dp"
-         android:layout_height="wrap_content"
-         android:layout_marginTop="@dimen/margin"
-         android:autofillHints=""
-         android:hint="@string/enter_email"
-         android:inputType="textEmailAddress"
-         app:layout_constraintEnd_toEndOf="parent"
-         app:layout_constraintStart_toStartOf="parent"
-         app:layout_constraintTop_toBottomOf="@id/txtLogin" />-->
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
