@@ -1,9 +1,9 @@
 package com.example.tote_fifa_2022.utilits
 
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.example.tote_fifa_2022.R
 
-fun replaceFragment(fragment: Fragment, addStack: Boolean = true) {
+/*fun replaceFragment(fragment: Fragment, addStack: Boolean = true) {
     /* Функция для установки фрагмента */
     if (addStack) {
         APP_ACTIVITY.supportFragmentManager.beginTransaction()
@@ -15,4 +15,9 @@ fun replaceFragment(fragment: Fragment, addStack: Boolean = true) {
             .replace(R.id.fragmentNavHost, fragment)
             .commit()
     }
+}*/
+
+fun showToast(message: String) {
+    Toast.makeText(APP_ACTIVITY, message, Toast.LENGTH_LONG).show()
 }
+

@@ -8,6 +8,7 @@ import androidx.navigation.Navigation
 import com.example.tote_fifa_2022.databinding.ActivityMainBinding
 import com.example.tote_fifa_2022.ui.objects.AppSlider
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
+import com.example.tote_fifa_2022.utilits.AppPreferences
 import com.example.tote_fifa_2022.utilits.START_YEAR
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
@@ -21,7 +22,8 @@ import com.mikepenz.materialdrawer.widget.MaterialDrawerSliderView
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var mBinding: ActivityMainBinding
+    private var _binding: ActivityMainBinding? = null
+    private val mBinding get() = _binding!!
     lateinit var mNavController: NavController
     lateinit var mSlider: MaterialDrawerSliderView
     lateinit var mAppSlider: AppSlider
@@ -29,11 +31,25 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mBinding = ActivityMainBinding.inflate(layoutInflater)
+        _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
         APP_ACTIVITY = this
 
+        AppPreferences.getPreference(this)
+        //AppPreferences.setAuthUser(false)
+
+        initFields()
+        initFunctions()
+
+        // Write a message to the database
+        /*val database = Firebase.database
+        val myRef = database.getReference("message")
+
+        myRef.push().setValue("Hello, World!")*/
+    }
+
+    private fun setCopyright() {
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
         var copyright = mBinding.copyrightYear
@@ -44,19 +60,16 @@ class MainActivity : AppCompatActivity() {
         } else {
             copyright.text = START_YEAR.toString()
         }
-
-        // Write a message to the database
-        val database = Firebase.database
-        val myRef = database.getReference("message")
-
-        myRef.push().setValue("Hello, World!")
     }
 
-    override fun onStart() {
-        super.onStart()
+    private fun initFields() {
+        mNavController = Navigation.findNavController(this, R.id.fragmentNavHost)
 
-        initFields()
-        initFunctions()
+        mSlider = mBinding.slider
+        //mAppSlider = AppSlider(mSlider, this)
+        mAppSlider = AppSlider()
+
+        setCopyright()
     }
 
     private fun initFunctions() {
@@ -74,14 +87,6 @@ class MainActivity : AppCompatActivity() {
         }*/
     }
 
-    private fun initFields() {
-        mNavController = Navigation.findNavController(this, R.id.fragmentNavHost)
-
-        mSlider = mBinding.slider
-        //mAppSlider = AppSlider(mSlider, this)
-        mAppSlider = AppSlider()
-    }
-
     private fun initToolbar() {
         val icon = IconicsDrawable(this, FontAwesome.Icon.faw_bars)
         icon.size = IconicsSize.TOOLBAR_ICON_SIZE
@@ -96,5 +101,10 @@ class MainActivity : AppCompatActivity() {
             android.R.id.home -> mSlider.drawerLayout?.openDrawer(mSlider)
         }
         return true
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

@@ -1,19 +1,38 @@
 package com.example.tote_fifa_2022.firebase
 
-import com.example.tote_fifa_2022.utilits.EMAIL
-import com.example.tote_fifa_2022.utilits.PASSWORD
+import com.example.tote_fifa_2022.utilits.*
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 class FirebaseRepository {
-    private val mAuth = FirebaseAuth.getInstance()
+    init {
+        AUTH = FirebaseAuth.getInstance()
+    }
 
-    fun connectToDatabase(onSuccess: () -> Unit, onFail: (String) -> Unit) {
-        mAuth.signInWithEmailAndPassword(EMAIL, PASSWORD)
-            .addOnSuccessListener { onSuccess() }
-            .addOnFailureListener { onFail(it.message.toString()) }
+    fun connectionToDatabase(onSuccess: () -> Unit, onFail: (String) -> Unit) {
+        if (AppPreferences.getAuthUser()) {
+            CURRENT_ID = AUTH.currentUser?.uid.toString()
+            onSuccess()
+        } else {
+            AUTH.signInWithEmailAndPassword(EMAIL, PASSWORD)
+                .addOnSuccessListener {
+                    CURRENT_ID = AUTH.currentUser?.uid.toString()
+                    onSuccess()
+                }
+                .addOnFailureListener {
+                    onFail(it.message.toString())
+
+                    /*AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD)
+                        .addOnSuccessListener {
+                            CURRENT_ID = AUTH.currentUser?.uid.toString()
+                            onSuccess()
+                        }
+                        .addOnFailureListener { onFail(it.message.toString()) }*/
+                }
+        }
     }
 
     fun signOut() {
-        mAuth.signOut()
+        AUTH.signOut()
     }
 }
