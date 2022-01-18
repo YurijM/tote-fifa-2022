@@ -1,10 +1,10 @@
 package com.example.tote_fifa_2022.screens.registration
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.tote_fifa_2022.R
 import com.example.tote_fifa_2022.databinding.FragmentRegistrationBinding
@@ -24,7 +24,7 @@ class RegistrationFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentRegistrationBinding.inflate(layoutInflater, container, false)
         return mBinding.root
@@ -41,7 +41,7 @@ class RegistrationFragment : Fragment() {
             var error = false
 
             if (!checkEmptyFields()) {
-                showToast("Все поля должны быть заполнены")
+                showToast(getString(R.string.all_fields_should_be_filled))
                 error = true
             } else {
                 val message = checkPasswordConfirm()
@@ -57,6 +57,7 @@ class RegistrationFragment : Fragment() {
 
                 mViewModel.registrationUser {
                     AppPreferences.setAuthUser(true)
+                    initSlider()
                     APP_ACTIVITY.mNavController.navigate(R.id.action_registrationFragment_to_gamblersFragment)
                 }
             }
@@ -74,9 +75,10 @@ class RegistrationFragment : Fragment() {
 
     private fun checkPasswordConfirm(): String {
         var error = ""
+        val count = 6
 
-        if (mPassword.length < 6) error = "Пароль должен содержать не менее 6 символов"
-        else if (mPassword != mPasswordConfirm) error = "Пароли не совпадают"
+        if (mPassword.length < count) error = getString(R.string.password_is_less_n_simbols, count)
+        else if (mPassword != mPasswordConfirm) error = getString(R.string.passwords_are_not_match)
 
         return error
     }

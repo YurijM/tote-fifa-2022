@@ -25,4 +25,7 @@
     <string name="add_email_bold"><b>Добавить адрес</b></string>
     <string name="edit_email_bold"><b>Редактировать адрес</b></string>
     <string name="title">Заголовок</string>
+    <string name="all_fields_should_be_filled">Все поля должны быть заполнены</string>
+    <string name="password_is_less_n_simbols">"Пароль должен содержать не менее %1$d символов"</string>
+    <string name="passwords_are_not_match">"Пароли не совпадают"</string>
 </resources>

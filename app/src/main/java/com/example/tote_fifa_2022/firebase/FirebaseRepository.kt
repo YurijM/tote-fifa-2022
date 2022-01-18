@@ -2,7 +2,6 @@ package com.example.tote_fifa_2022.firebase
 
 import com.example.tote_fifa_2022.utilits.*
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.FirebaseDatabase
 
 class FirebaseRepository {
     init {

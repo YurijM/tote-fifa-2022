@@ -24,18 +24,26 @@
             app:title="@string/tote"
             app:titleTextColor="@color/white" />
 
-        <fragment
-            android:id="@+id/fragmentNavHost"
-            android:name="androidx.navigation.fragment.NavHostFragment"
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_margin="@dimen/margin"
-            app:defaultNavHost="true"
+            android:layout_marginBottom="@dimen/margin_lg"
             app:layout_constraintBottom_toTopOf="@id/footer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar"
-            app:navGraph="@navigation/navigation_graph" />
+            app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+            <fragment
+                android:id="@+id/fragmentNavHost"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin"
+                app:defaultNavHost="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:navGraph="@navigation/navigation_graph" />
+
+        </ScrollView>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/footer"
@@ -52,9 +60,9 @@
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/author"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/copyright"
@@ -62,19 +70,19 @@
                 android:layout_height="16dp"
                 android:layout_marginEnd="@dimen/margin_sm"
                 android:src="@drawable/ic_copyright"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/copyrightYear"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/copyrightYear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="2021"
                 android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                tools:text="2021" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -86,8 +94,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:backgroundTint="@color/slider"
-        android:paddingVertical="2dp"
         android:fitsSystemWindows="true"
-        android:minWidth="@dimen/width_slider" />
+        android:minWidth="@dimen/width_slider"
+        android:paddingVertical="2dp" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

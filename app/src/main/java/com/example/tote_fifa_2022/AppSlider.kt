@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import com.example.tote_fifa_2022.R
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
+import com.example.tote_fifa_2022.utilits.AppPreferences
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome
 import com.mikepenz.iconics.typeface.library.fontawesome.FontAwesome.Icon.*
 import com.mikepenz.materialdrawer.iconics.iconicsIcon
@@ -67,7 +68,7 @@ class AppSlider() {
             }
         )
 
-        if (!test) {
+        if (AppPreferences.getAuthUser()) {
             APP_ACTIVITY.mSlider.itemAdapter.add(
                 DividerDrawerItem(),
                 SecondaryDrawerItem().apply {
