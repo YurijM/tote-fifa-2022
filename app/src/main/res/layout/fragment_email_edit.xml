@@ -19,14 +19,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutInputAdmEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtEditEmail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputAdmEmail"
+            style="@style/input"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--<EditText
         android:id="@+id/editAdmEmail"
         style="@style/input"
         android:hint="@string/enter_email"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtEditEmail" />
+        app:layout_constraintTop_toBottomOf="@id/txtEditEmail" />-->
 
     <Button
         android:id="@+id/btnSaveEmail"
@@ -36,7 +50,7 @@
         android:text="@string/save"
         app:layout_constraintEnd_toStartOf="@id/btnCancelEmail"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editAdmEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutInputAdmEmail" />
 
     <Button
         android:id="@+id/btnCancelEmail"
@@ -47,6 +61,6 @@
         android:text="@string/cancel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/btnSaveEmail"
-        app:layout_constraintTop_toBottomOf="@+id/editAdmEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutInputAdmEmail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

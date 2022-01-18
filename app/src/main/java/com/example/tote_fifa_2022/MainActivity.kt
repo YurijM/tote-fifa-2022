@@ -10,8 +10,6 @@ import com.example.tote_fifa_2022.ui.objects.AppSlider
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
 import com.example.tote_fifa_2022.utilits.AppPreferences
 import com.example.tote_fifa_2022.utilits.START_YEAR
-import com.google.firebase.database.ktx.database
-import com.google.firebase.ktx.Firebase
 import com.mikepenz.iconics.IconicsColor
 import com.mikepenz.iconics.IconicsDrawable
 import com.mikepenz.iconics.IconicsSize
@@ -37,10 +35,12 @@ class MainActivity : AppCompatActivity() {
         APP_ACTIVITY = this
 
         AppPreferences.getPreference(this)
-        //AppPreferences.setAuthUser(false)
+        AppPreferences.setAuthUser(false)
 
-        initFields()
-        initFunctions()
+        //initFields()
+        //initFunctions()
+
+        initialization()
 
         // Write a message to the database
         /*val database = Firebase.database
@@ -62,29 +62,31 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun initFields() {
+    fun initialization() {
         mNavController = Navigation.findNavController(this, R.id.fragmentNavHost)
 
-        mSlider = mBinding.slider
-        //mAppSlider = AppSlider(mSlider, this)
-        mAppSlider = AppSlider()
+        setSupportActionBar(mBinding.toolbar)
 
         setCopyright()
+
+        initSlider()
     }
 
-    private fun initFunctions() {
-        setSupportActionBar(mBinding.toolbar)
-        initToolbar()
+    private fun initSlider() {
+        if (AppPreferences.getAuthUser()) {
+            initToolbar()
 
-        mAppSlider.create()
+            mSlider = mBinding.slider
+            //mAppSlider = AppSlider(mSlider, this)
 
-        /*if (AUTH.currentUser != null) {
+            mAppSlider = AppSlider()
             mAppSlider.create()
 
-            replaceFragment(MainListFragment(), false)
+            mNavController.navigate(R.id.gamblersFragment)
+
         } else {
-            replaceFragment(EnterPhoneNumberFragment(), false)
-        }*/
+            mNavController.navigate(R.id.loginFragment)
+        }
     }
 
     private fun initToolbar() {

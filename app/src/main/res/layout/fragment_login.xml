@@ -8,12 +8,8 @@
 
     <TextView
         android:id="@+id/txtLogin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        style="@style/titleFragment"
         android:text="@string/login_bold"
-        android:textColor="#00838F"
-        android:textSize="@dimen/text_size_xl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,9 +23,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputEmail"
             style="@style/input"
-            android:backgroundTint="@color/background"
-            android:inputType="textEmailAddress"
-            android:hint="@string/enter_email" />
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -37,15 +32,14 @@
         android:id="@+id/inputLayoutPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:passwordToggleEnabled="true"
-        app:layout_constraintTop_toBottomOf="@id/inputLayoutEmail">
+        app:layout_constraintTop_toBottomOf="@id/inputLayoutEmail"
+        app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPassword"
             style="@style/input"
-            android:backgroundTint="@color/background"
-            android:inputType="textPassword"
-            android:hint="@string/enter_password" />
+            android:hint="@string/enter_password"
+            android:inputType="textPassword" />
 
     </com.google.android.material.textfield.TextInputLayout>
 

@@ -14,7 +14,7 @@
     <string name="confirm_password">Подтвердите пароль</string>
     <string name="enter_family">Введите фамилию</string>
     <string name="enter_name">Введите имя</string>
-    <string name="enter_nickname">Введите Ник</string>
+    <string name="enter_nickname">Введите НИК</string>
     <string name="login_bold"><b>Авторизация</b></string>
     <string name="emails_bold"><b>Зарегистрированные email адреса</b></string>
     <string name="registration_bold"><b>Регистрация</b></string>

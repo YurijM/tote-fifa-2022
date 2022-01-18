@@ -1,85 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.emails.edit.EmailEditFragment">
 
     <TextView
         android:id="@+id/txtRegistration"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_xl"
-        android:gravity="center"
+        style="@style/titleFragment"
         android:text="@string/registration_bold"
-        android:textColor="@color/application"
-        android:textSize="@dimen/text_size_xl"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/inputRegFamily"
-        style="@style/input"
-        android:hint="@string/enter_family"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txtRegistration" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutInputRegFamily"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txtRegistration">
 
-    <EditText
-        android:id="@+id/inputRegName"
-        style="@style/input"
-        android:hint="@string/enter_name"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputRegFamily" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputRegFamily"
+            style="@style/input"
+            android:hint="@string/enter_family" />
 
-    <EditText
-        android:id="@+id/inputRegNik"
-        style="@style/input"
-        android:hint="@string/enter_nickname"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputRegName" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
-        android:id="@+id/inputRegEmail"
-        style="@style/input"
-        android:hint="@string/enter_email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputRegNik" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutInputRegName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutInputRegFamily">
 
-    <EditText
-        android:id="@+id/inputRegPassword"
-        style="@style/input"
-        android:hint="@string/enter_password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputRegEmail" />
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputRegName"
+            style="@style/input"
+            android:hint="@string/enter_name" />
 
-    <EditText
-        android:id="@+id/inputRegPasswordConfirm"
-        style="@style/input"
-        android:hint="@string/confirm_password"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputRegPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutInputRegNickname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutInputRegName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputRegNickname"
+            style="@style/input"
+            android:hint="@string/enter_nickname" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutInputRegEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutInputRegNickname">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputRegEmail"
+            style="@style/input"
+            android:hint="@string/enter_email"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutInputRegPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutInputRegEmail"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputRegPassword"
+            style="@style/input"
+            android:hint="@string/enter_password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layoutInputRegPasswordConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layoutInputRegPassword"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputRegPasswordConfirm"
+            style="@style/input"
+            android:hint="@string/confirm_password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register"
+        android:layout_marginTop="@dimen/margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputRegPasswordConfirm" />
+        app:layout_constraintTop_toBottomOf="@id/layoutInputRegPasswordConfirm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

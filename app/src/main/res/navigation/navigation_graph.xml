@@ -37,6 +37,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:launchSingleTop="true"
             app:popUpTo="@id/navigation_graph" />
+        <action
+            android:id="@+id/action_registrationFragment_to_gamblersFragment"
+            app:destination="@id/gamblersFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/navigation_graph" />
     </fragment>
     <fragment
         android:id="@+id/gamblersFragment"

@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.tote_fifa_2022.R
 import com.example.tote_fifa_2022.databinding.FragmentLoginBinding
-import com.example.tote_fifa_2022.firebase.FirebaseRepository
 import com.example.tote_fifa_2022.utilits.APP_ACTIVITY
 import com.example.tote_fifa_2022.utilits.AppPreferences
 import com.example.tote_fifa_2022.utilits.EMAIL
@@ -34,7 +33,9 @@ class LoginFragment : Fragment() {
         mViewModel = ViewModelProvider(this).get(LoginFragmentViewModel::class.java)
 
         if (AppPreferences.getAuthUser()) {
-            mViewModel.initDatabase() {
+            APP_ACTIVITY.initialization()
+
+            mViewModel.connectionToDatabase() {
                 APP_ACTIVITY.mNavController.navigate(R.id.action_loginFragment_to_gamblersFragment)
             }
         } else {
@@ -55,7 +56,7 @@ class LoginFragment : Fragment() {
                 EMAIL = email
                 PASSWORD = password
 
-                mViewModel.initDatabase {
+                mViewModel.connectionToDatabase {
                     AppPreferences.setAuthUser(true)
                     APP_ACTIVITY.mNavController.navigate(R.id.action_loginFragment_to_gamblersFragment)
                 }

@@ -31,6 +31,14 @@ class FirebaseRepository {
                 }
         }
     }
+    fun registrationUser(onSuccess: () -> Unit, onFail: (String) -> Unit) {
+        AUTH.createUserWithEmailAndPassword(EMAIL, PASSWORD)
+            .addOnSuccessListener {
+                CURRENT_ID = AUTH.currentUser?.uid.toString()
+                onSuccess()
+            }
+            .addOnFailureListener { onFail(it.message.toString()) }
+    }
 
     fun signOut() {
         AUTH.signOut()
