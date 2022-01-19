@@ -9,7 +9,7 @@
     <TextView
         android:id="@+id/txtRegistration"
         style="@style/titleFragment"
-        android:text="@string/registration_bold"
+        android:text="@string/registration"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

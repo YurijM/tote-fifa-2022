@@ -27,7 +27,7 @@ class EmailsFragment : Fragment() {
 
         mBinding.btnAddEmail.setOnClickListener {
             val bundle = Bundle()
-            bundle.putString("title", getString(R.string.add_email_bold))
+            bundle.putString("title", getString(R.string.add_email))
 
             APP_ACTIVITY.mNavController.navigate(
                 R.id.action_emailsFragment_to_emailEditFragment,

@@ -8,12 +8,8 @@
 
     <TextView
         android:id="@+id/Gamblers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/gamblers_bold"
-        android:textColor="@color/application"
-        android:textSize="@dimen/text_size_xl"
+        style="@style/titleFragment"
+        android:text="@string/gamblers"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">tote-fifa-2022</string>
     <string name="tote">Тотализатор - 2022</string>
-    <string name="gamblers_bold"><b>Участники</b></string>
     <string name="gamblers">Участники</string>
     <string name="games">Игры</string>
     <string name="prognosis">Прогноз</string>
@@ -15,15 +14,15 @@
     <string name="enter_family">Введите фамилию</string>
     <string name="enter_name">Введите имя</string>
     <string name="enter_nickname">Введите НИК</string>
-    <string name="login_bold"><b>Авторизация</b></string>
-    <string name="emails_bold"><b>Зарегистрированные email адреса</b></string>
-    <string name="registration_bold"><b>Регистрация</b></string>
+    <string name="login">Авторизация</string>
+    <string name="emails_list">Зарегистрированные email адреса</string>
+    <string name="registration">Регистрация</string>
     <string name="register">Зарегистрироваться</string>
     <string name="emails">emails</string>
     <string name="save">Сохранить</string>
     <string name="cancel">Отмена</string>
-    <string name="add_email_bold"><b>Добавить адрес</b></string>
-    <string name="edit_email_bold"><b>Редактировать адрес</b></string>
+    <string name="add_email">Добавить адрес</string>
+    <string name="edit_email">Редактировать адрес</string>
     <string name="title">Заголовок</string>
     <string name="all_fields_should_be_filled">Все поля должны быть заполнены</string>
     <string name="password_is_less_n_simbols">"Пароль должен содержать не менее %1$d символов"</string>
