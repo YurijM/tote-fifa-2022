@@ -38,10 +38,10 @@ fun initSlider() {
         val appSlider = AppSlider()
         appSlider.create()
 
-        //APP_ACTIVITY.mNavController.navigate(R.id.gamblersFragment)
+        APP_ACTIVITY.mNavController.navigate(R.id.gamblersFragment)
 
-    //} else {
-        //APP_ACTIVITY.mNavController.navigate(R.id.loginFragment)
+    } else {
+        APP_ACTIVITY.mNavController.navigate(R.id.loginFragment)
     }
 }
 

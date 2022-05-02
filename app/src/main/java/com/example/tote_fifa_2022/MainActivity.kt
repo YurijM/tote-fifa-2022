@@ -1,7 +1,11 @@
 package com.example.tote_fifa_2022
 
 import android.os.Bundle
+import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
+import android.view.ViewConfiguration
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -48,6 +52,7 @@ class MainActivity : AppCompatActivity() {
 
         mSlider = mBinding.slider
         initSlider()
+        //supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
 
     private fun setCopyright() {
@@ -63,9 +68,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        val item = mBinding.toolbar.menu.findItem(R.id.stake)
+        Log.d("abc", item.toString())
+        return true
+    }*/
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        Log.d("abc", item.itemId.toString())
+        Log.d("abc", R.id.stake.toString())
         when (item.itemId) {
             android.R.id.home -> mSlider.drawerLayout?.openDrawer(mSlider)
+            R.id.stake -> Toast.makeText(this, "Ставки", Toast.LENGTH_LONG).show()
         }
         return true
     }
